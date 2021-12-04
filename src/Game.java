@@ -29,13 +29,16 @@ public class Game {
             if (playerStep == 1) {
                 //Da der Spieler gespielt hat, und es geklappt hat, wird geprüft, ob das Spiel schon zu Ende ist
                 if (ticTacToeGame.spielende()) {
-                    //Wenn das Spiel zu Ende ist, "Game Over" anzeigen und das Ergebnis anzeigen.
+                    /*Wenn das Spiel zu Ende ist, "Game Over" und Ergebnis anzeigen. "false" wird zurückgegeben, um die
+                    While-Schleife zu beende*/
                     whileBedingung = Anzeige.endeAnzeigen(ticTacToeGame);
                 } else {
                     //Wenn der Spiele gespielt hat und alles geklappt hat, dann ist der Computer dran.
                     ticTacToeGame.computerZug();
                     //Nachdem der Computer gespielt hat, wird geprüft, ob das Spiel zu Ende ist.
                     if (ticTacToeGame.spielende()) {
+                        /*Wenn das Spiel zu Ende ist, "Game Over" und Ergebnis anzeigen. "false" wird zurückgegeben,
+                        um die While-Schleife zu beende*/
                         whileBedingung = Anzeige.endeAnzeigen(ticTacToeGame);
                     }
                 }
