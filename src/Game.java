@@ -3,6 +3,11 @@
  */
 public class Game {
 
+    /**
+     * Diese Methode ist einfach die Methode, die das Programm startet.
+     *
+     * @param args
+     */
     public static void main(String[] args) {
 
         TicTacToe ticTacToeGame = new TicTacToe();

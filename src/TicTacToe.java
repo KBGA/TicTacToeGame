@@ -2,7 +2,9 @@
  * Dieser Code ist eine einfache Implementierung des Spiels TicTacToe
  */
 public class TicTacToe {
-    //Diese Variable ist für das Brett
+    /**
+     * Diese Variable ist für das Brett
+     */
     private int[][] brett;
 
     /**
@@ -12,14 +14,22 @@ public class TicTacToe {
         return brett;
     }
 
-    //Diese Variable ist für den aktuellen Spielen
+    /**
+     * Diese Variable ist für den aktuellen Spielen
+     */
     private int spielerAmZug;
-    //Variable für die Spieltiefe
+    /**
+     * Variable für die Spieltiefe
+     */
     private int spielTiefe;
-    //
+    /**
+     * Variable für den besten Zug
+     */
     private int bestMove;
 
-    //Constructor
+    /**
+     * Constructor
+     */
     public TicTacToe() {
         // Am Anfang sind alle Werte des Bretts gleich null (0).
         brett = new int[3][3];
@@ -75,7 +85,7 @@ public class TicTacToe {
 
     }
 
-    //Der Computer ist dran
+    /** Der Computer ist dran */
     public void computerZug() {
 
         if (spielerAmZug == -1) {
@@ -90,13 +100,14 @@ public class TicTacToe {
         spielerAmZug = -spielerAmZug;
     }
 
-    // X ist am Zug, bester Zug wird in bestMove gepseichert
+    /** X ist am Zug, bester Zug wird in bestMove gepseichert */
     public int minmaxX(int[][] brett, int tiefe) {
         //Zuerst wird geprüft, ob das Spiel noch nicht zu Ende ist
         int spielStand = SpielPruefung.standPruefen(brett);
         if (spielStand != 0) {
             return spielStand;
         }
+        // Wenn alle Felder schon besetzt sind
         if (SpielPruefung.besetzteFelderPruefen(brett) == 9) {
             return 0;
         }
@@ -117,7 +128,7 @@ public class TicTacToe {
         return max;
     }
 
-    // O ist am Zug, bester Zug wird in bestMove gepseichert
+    /** O ist am Zug, bester Zug wird in bestMove gepseichert */
     public int minmaxO(int[][] brett, int tiefe) {
         // vielleicht ist das Spiel schon fertig?
         int eval = SpielPruefung.standPruefen(brett);
@@ -142,7 +153,7 @@ public class TicTacToe {
         return min;
     }
 
-    // liefert die Liste der noch offenen Positionen mit x*10+y
+    /** liefert die Liste der noch offenen Positionen mit x*10+y */
     private int[] genMoves(int[][] b) {
         // speichere die Züge
         int[] zuege = new int[9 - SpielPruefung.besetzteFelderPruefen(b)];  // wieviele Züge gibt es?

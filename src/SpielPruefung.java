@@ -1,5 +1,14 @@
+/**
+ * Diese Klasse kümmert sich um die Prüfung des Spielstandes.
+ */
 public class SpielPruefung {
 
+    /**
+     * Diese Funktion prüft, ob das Spiel schon gewonnen wurde oder nicht
+     *
+     * @param brett
+     * @return
+     */
     public static int standPruefen(int[][] brett) {
         // prüfe zeilen und spalten
         int sum1, sum2;

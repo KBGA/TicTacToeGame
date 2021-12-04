@@ -1,5 +1,12 @@
+/**
+ * Diese Klasse kümmert sich um die Anzeigen in der Console
+ */
 public class Anzeige {
-    // das aktuelle Brett wird angezeigt
+    /**
+     * Diese Methode bekommt das Brett als Parameter und zeigt es einfach an.
+     *
+     * @param brett
+     */
     public static void brettAnzeigen(int[][] brett) {
 
         //Die erste Zeile des Bretts wird angezeigt
@@ -29,6 +36,12 @@ public class Anzeige {
         System.out.println("**1*2*3**\n");
     }
 
+    /**
+     * Diese Methode zeigt das Ende des Spiels und das Endergebnis.
+     *
+     * @param ticTacToeGame
+     * @return
+     */
     public static boolean endeAnzeigen(TicTacToe ticTacToeGame) {
         //Wenn das Spiel zu Ende ist, "Game Over" anzeigen und das Ergebnis anzeigen.
         System.out.println("Game Over!!! ");

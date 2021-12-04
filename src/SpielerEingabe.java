@@ -6,7 +6,9 @@ import java.io.InputStreamReader;
  */
 public class SpielerEingabe {
 
-    //Diese Funktion liest die Werte X oder Y.
+    /**
+     * Diese Funktion liest die Werte X oder Y.
+     */
     public static  int eingabeLesen(String XorY){
         InputStreamReader playerInputStream  = new InputStreamReader(System.in);
         //spieleInput ist die Variable für die Werte, die vom Spieler eingegeben werden.
