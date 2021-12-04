@@ -2,8 +2,7 @@ public class SpielPruefung {
 
     public static int standPruefen(int[][] brett) {
         // prüfe zeilen und spalten
-        int sum1 = 0;
-        int sum2 = 0;
+        int sum1, sum2;
         for (int i = 0; i < 3; i++) {
             //sum1 wird hier für die Spalten verwendet
             sum1 = brett[i][0] + brett[i][1] + brett[i][2];
