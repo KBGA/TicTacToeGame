@@ -29,11 +29,12 @@ public class Anzeige {
         System.out.println("**1*2*3**\n");
     }
 
-    public static void endeAnzeigen(TicTacToe ticTacToeGame) {
+    public static boolean endeAnzeigen(TicTacToe ticTacToeGame) {
         //Wenn das Spiel zu Ende ist, "Game Over" anzeigen und das Ergebnis anzeigen.
         System.out.println("Game Over!!! ");
         System.out.println(ticTacToeGame.spielErgebnis());
         Anzeige.brettAnzeigen(ticTacToeGame.getBoard());
+        return false;
     }
 
 

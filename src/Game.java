@@ -1,18 +1,16 @@
-
 /**
  * Diese Klasse ist das Hauptprogramm mit der "main" Funktion.
  */
 public class Game {
 
-
     public static void main(String[] args) {
 
         TicTacToe ticTacToeGame = new TicTacToe();
-
         int xInput;
         int yInput;
+        boolean whileBedingung = true;
 
-        while (true) {
+        while (whileBedingung) {
             //Das Brett wird jedes Mal angezeigt. Am Anfang ist das Brett leer.
             Anzeige.brettAnzeigen(ticTacToeGame.getBoard());
             System.out.println("Sie sind dran");
@@ -30,16 +28,14 @@ public class Game {
                 //Da der Spieler gespielt hat, und es geklappt hat, wird geprüft, ob das Spiel schon zu Ende ist
                 if (ticTacToeGame.spielende()) {
                     //Wenn das Spiel zu Ende ist, "Game Over" anzeigen und das Ergebnis anzeigen.
-                    Anzeige.endeAnzeigen(ticTacToeGame);
-                    //Die While-Schleife wird abgebrochen, wenn das Spiel zu Ende ist.
-                    break;
-                }
-                //Wenn der Spiele gespielt hat und alles geklappt hat, dann ist der Computer dran.
-                ticTacToeGame.computerZug();
-                //Nachdem der Computer gespielt hat, wird geprüft, ob das Spiel zu Ende ist.
-                if (ticTacToeGame.spielende()) {
-                    Anzeige.endeAnzeigen(ticTacToeGame);
-                    break;
+                    whileBedingung = Anzeige.endeAnzeigen(ticTacToeGame);
+                } else {
+                    //Wenn der Spiele gespielt hat und alles geklappt hat, dann ist der Computer dran.
+                    ticTacToeGame.computerZug();
+                    //Nachdem der Computer gespielt hat, wird geprüft, ob das Spiel zu Ende ist.
+                    if (ticTacToeGame.spielende()) {
+                        whileBedingung = Anzeige.endeAnzeigen(ticTacToeGame);
+                    }
                 }
             }
 
