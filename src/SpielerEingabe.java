@@ -29,6 +29,7 @@ public class SpielerEingabe {
                     "drücken Sie wieder Enter: ");
         }
 
+        //Der int-Wert wird zurückgegeben
         return playerInputValue;
     }
 }
