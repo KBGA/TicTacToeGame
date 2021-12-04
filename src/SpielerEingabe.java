@@ -4,7 +4,6 @@ import java.io.InputStreamReader;
 /**
  * Diese Klasse liest die Eingabe des Spielers und gibt den Wert als int zurück
  */
-
 public class SpielerEingabe {
 
     //Diese Funktion liest die Werte X oder Y.
@@ -28,7 +27,6 @@ public class SpielerEingabe {
             System.out.println("Sie sind dran. Geben Sie zuerst x ein und drücken Enter. Dann geben Sie y ein und " +
                     "drücken Sie wieder Enter: ");
         }
-
         //Der int-Wert wird zurückgegeben
         return playerInputValue;
     }

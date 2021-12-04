@@ -2,31 +2,37 @@ public class SpielPruefung {
 
     public static int standPruefen(int[][] brett) {
         // prüfe zeilen und spalten
-        int sum = 0, sum2 = 0;
+        int sum1 = 0;
+        int sum2 = 0;
         for (int i = 0; i < 3; i++) {
-            sum = brett[i][0] + brett[i][1] + brett[i][2];
+            //sum1 wird hier für die Spalten verwendet
+            sum1 = brett[i][0] + brett[i][1] + brett[i][2];
+            //sum1 wird hier für die Zeilen verwendet
             sum2 = brett[0][i] + brett[1][i] + brett[2][i];
-            if ((sum == -3) || (sum2 == -3)){
+            //Wenn die Summe in einer Zeile oder Spalte -3 ist, hat der Computer gewonnen.
+            // Der Wert -1 wird zurückgegeben
+            if ((sum1 == -3) || (sum2 == -3)) {
                 return -1;
-            }
-            else if ((sum == 3) || (sum2 == 3)){
+            } else if ((sum1 == 3) || (sum2 == 3)) {
+                //Wenn die Summe in einer Zeile oder Spalte 3 ist, hat der Spieler gewonnen.
+                // Der Wert 1 wird zurückgegeben
                 return 1;
             }
         }
 
-        // prüfe die Diagonale links oben nach rechts unten
-        sum = brett[0][0] + brett[1][1] + brett[2][2];
-        // prüfe die Diagonale links unten nach rechts oben
+        //prüfe die Diagonale links oben nach rechts unten
+        sum1 = brett[0][0] + brett[1][1] + brett[2][2];
+        //prüfe die Diagonale links unten nach rechts oben
         sum2 = brett[0][2] + brett[1][1] + brett[2][0];
 
-        if ((sum == -3) || (sum2 == -3)){
+        //Wenn die Summe in der Diagonale -3 ist, hat der Computer gewonnen. Der Wert -1 wird zurückgegeben
+        if ((sum1 == -3) || (sum2 == -3)) {
             return -1;
-        }
-        else if ((sum == 3) || (sum2 == 3)){
+        } else if ((sum1 == 3) || (sum2 == 3)) {
+            //Wenn die Summe in der Diagonale 3 ist, hat der Spieler gewonnen. Der Wert 1 wird zurückgegeben
             return 1;
         }
-
-        // ansonsten ist es (noch) unentschieden
+        //Falls das Spiel noch unentschieden ist, wird 0 zurückgegeben
         return 0;
     }
 
@@ -44,15 +50,16 @@ public class SpielPruefung {
         return count;
     }
 
-
+    /**
+     * Diese Funktion prüft, ob das Brett schon voll ist oder, ob jemand schon gewonnen hat
+     */
     public static boolean spielPruefen(int[][] brett) {
-        if ((standPruefen(brett) != 0) || (besetzteFelderPruefen(brett) == 9)) {
-            return true;
-        } else {
-            return false;
-        }
+        return (standPruefen(brett) != 0) || (besetzteFelderPruefen(brett) == 9);
     }
 
+    /**
+     * Diese Funktion prüft wer gewonnen hat oder, ob es unentschieden ist.
+     */
     public static String ergebnisPruefen(int[][] brett) {
 
         int ergebnisWert = standPruefen(brett);
