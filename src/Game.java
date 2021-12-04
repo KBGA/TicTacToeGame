@@ -6,15 +6,17 @@ public class Game {
     public static void main(String[] args) {
 
         TicTacToe ticTacToeGame = new TicTacToe();
+        //Variable für die Eingabe von X
         int xInput;
+        //Variable für die Eingabe von Y
         int yInput;
+        //Variable um die While-Schleife zu stoppen, wenn das Spiel zu Ende ist
         boolean whileBedingung = true;
 
         while (whileBedingung) {
             //Das Brett wird jedes Mal angezeigt. Am Anfang ist das Brett leer.
             Anzeige.brettAnzeigen(ticTacToeGame.getBoard());
             System.out.println("Sie sind dran");
-
 
             //Die Werte x und y werden gelesen
             xInput = SpielerEingabe.eingabeLesen("X");
@@ -38,7 +40,6 @@ public class Game {
                     }
                 }
             }
-
         }
     }
 }
