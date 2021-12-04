@@ -36,7 +36,9 @@ public class SpielPruefung {
     }
 
 
-    // zählt die Anzahl der bereits besetzten Felder
+    /**
+     * Diese Funktion zählt die Anzahl der bereits besetzten Felder
+     */
     public static int besetzteFelderPruefen(int[][] brett) {
         int count = 0;
         for (int i = 0; i < 3; i++) {
