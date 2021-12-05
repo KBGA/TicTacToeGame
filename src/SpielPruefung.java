@@ -82,21 +82,4 @@ public class SpielPruefung {
             return "Spieler O gewinnt";
         }
     }
-
-
-    /**
-     * Nur um in GitHub zu üben
-     */
-    public static String ergebnisPruefen2(int[][] brett) {
-
-        int ergebnisWert = standPruefen(brett);
-
-        if (ergebnisWert == 0) {
-            return "Spiel endete unentschieden";
-        } else if (ergebnisWert == 1) {
-            return "Spieler X gewinnt";
-        } else {
-            return "Spieler O gewinnt";
-        }
-    }
 }
