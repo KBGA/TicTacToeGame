@@ -79,7 +79,7 @@ public class SpielPruefung {
         } else if (ergebnisWert == 1) {
             return "Spieler X gewinnt";
         } else {
-            return "Spieler O gewinnt";
+            return "Der Computer gewinnt gewinnt";
         }
     }
 }
