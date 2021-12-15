@@ -1,0 +1,34 @@
+apply plugin: "java"
+
+
+jar {
+    manifest {
+        attributes 'Implementation-Version': '2.0'
+    }
+}
+
+
+task execute(type: JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+}
+
+
+task copySrcToArchiv(type: Copy) {
+
+}
+
+task copySources(type: Copy) {
+    from 'src'
+    into 'build/out'
+}
+
+task bundleSoucres(type: Zip, dependsOn: copySources) {
+    baseName = 'sources'
+    destinationDir = file('build')
+
+    from 'build/out'
+}
+
+dependencies {
+    testImplementation 'junit:junit:4.13.2'
+}
